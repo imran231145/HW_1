@@ -67,4 +67,31 @@ const move = () => {
 
 move()
 
+const secondsBlock = document.getElementById('seconds')
+const startBtn = document.querySelector('#start')
+const stopBtn = document.querySelector('#stop')
+const resetBtn = document.querySelector('#reset')
 
+let time = 0
+let interval = null
+
+startBtn.onclick = () => {
+    if (interval != null) return  
+
+    interval = setInterval(() => {
+        time++
+        secondsBlock.innerText = time
+    }, 1000) 
+}
+
+stopBtn.onclick = () => {+++
+    clearInterval(interval)
+    interval = null
+}
+
+resetBtn.onclick = () => {
+    clearInterval(interval)
+    interval = null
+    time = 0
+    secondsBlock.innerText = time 
+}
