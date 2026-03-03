@@ -84,7 +84,7 @@ startBtn.onclick = () => {
     }, 1000) 
 }
 
-stopBtn.onclick = () => {+++
+stopBtn.onclick = () => {
     clearInterval(interval)
     interval = null
 }
