@@ -16,21 +16,55 @@ gmailButton.onclick = () => {
     }
 }
 
-const child = document.querySelector('.child_block')
 const parent = document.querySelector('.parent_block')
+const child = document.querySelector('.child_block')
 
-let child_block = 0
+let posX = 0
+let posY = 0
+let direction = 'right'
+const speed = 2
 
-const counter = () => {
-    child_block++
-    
-    child.style.transform = `translateX(${child_block}px)`
+const move = () => {
+    const maxX = parent.clientWidth - child.clientWidth
+    const maxY = parent.clientHeight - child.clientHeight
 
-    const max = parent.offsetWidth - child.offsetWidth
-
-    if (child_block < max) {
-        requestAnimationFrame(counter)
+    if (direction === 'right') {
+        posX += speed
+        if (posX >= maxX) {
+            posX = maxX
+            direction = 'down'
+        }
     }
+
+    else if (direction === 'down') {
+        posY += speed
+        if (posY >= maxY) {
+            posY = maxY
+            direction = 'left'
+        }
+    }
+
+    else if (direction === 'left') {
+        posX -= speed
+        if (posX <= 0) {
+            posX = 0
+            direction = 'up'
+        }
+    }
+
+    else if (direction === 'up') {
+        posY -= speed
+        if (posY <= 0) {
+            posY = 0
+            direction = 'right'
+        }
+    }
+
+    child.style.transform = `translate(${posX}px, ${posY}px)`
+
+    requestAnimationFrame(move)
 }
 
-counter()
+move()
+
+
