@@ -95,3 +95,15 @@ resetBtn.onclick = () => {
     time = 0
     secondsBlock.innerText = time 
 }
+
+
+const request = new XMLHttpRequest()
+
+request.open("GET", "../data/characters.json")
+
+request.send()
+
+request.onload = () => {
+    const data = JSON.parse(request.response)
+    console.log(data)
+}

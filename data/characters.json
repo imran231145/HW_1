@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Invoker",
+    "age": 1000,
+    "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png"
+  },
+  {
+    "name": "Shadow Fiend",
+    "age": 5000,
+    "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nevermore.png"
+  },
+  {
+    "name": "Anti Mage",
+    "age": 33,
+    "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/antimage.png"
+  }
+]

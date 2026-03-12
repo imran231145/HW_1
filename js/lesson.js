@@ -16,3 +16,4 @@ phoneButton.onclick = () => {
         phoneResult.style.color = 'red'
     }
 }
+
