@@ -96,14 +96,32 @@ resetBtn.onclick = () => {
     secondsBlock.innerText = time 
 }
 
+const charactersList = document.querySelector(".characters-list")
 
 const request = new XMLHttpRequest()
 
 request.open("GET", "../data/characters.json")
-
 request.send()
 
 request.onload = () => {
-    const data = JSON.parse(request.response)
-    console.log(data)
-}
+
+    const characters = JSON.parse(request.response)
+
+    characters.forEach(character => {
+
+        const card = document.createElement("div")
+        card.classList.add("character-card")
+
+        card.innerHTML = `
+            <div class="character-photo">
+                <img src="${character.image}" alt="${character.name}">
+            </div>
+            <h3>${character.name}</h3>
+            <p>Возраст: ${character.age}</p>
+        `
+
+        charactersList.appendChild(card)
+
+    })
+
+}   
